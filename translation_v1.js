@@ -1,29 +1,21 @@
-<script type="text/javascript">
-	document.addEventListener('DOMContentLoaded', setButtonLink);
+const fbRegexStr = 'https?://(www.|m.|l.|web.|business.)?(d{4,5}.od.)?(business.)?(facebook|instagram|whatsapp).com(/.*)?';
 
-	const fbRegexStr = 'https?://(www.|m.|l.|web.|business.)?(d{4,5}.od.)?(business.)?(facebook|instagram|whatsapp).com(/.*)?';
+const isValidFbeRedirectUri = (uri) => new RegExp(fbRegexStr).test(uri)
 
-	const isValidFbeRedirectUri = (uri) => new RegExp(fbRegexStr).test(uri)
+const kyteWebAuthUrl = 'https://stage.web.kyteapp.com/external-login';
 
-  const kyteWebAuthUrl = 'https://stage.web.kyteapp.com/external-login';
+function setButtonLink() {
+  const params = new URLSearchParams(window.location.search);
+  const redirectUri = params.get('redirect_uri');
+  if (isValidFbeRedirectUri(redirectUri)) {
+    var link = document.getElementById("goto-auth");
+    if (!link) return false;
+    const href = kyteWebAuthUrl + "?redirect_uri=" + encodeURIComponent(redirectUri);
+    link.setAttribute("href", href);
+    return false;
+  }
+}
 
-  function setButtonLink() {
-		const params = new URLSearchParams(window.location.search);
-    const redirectUri = params.get('redirect_uri');
-    //console.log(redirectUri);
-    if (isValidFbeRedirectUri(redirectUri)) {
-    	//find button target id
-      var link = document.getElementById("goto-auth");
-      if (!link) return false;
-     	const href = kyteWebAuthUrl + "?redirect_uri=" + encodeURIComponent(redirectUri);
-			link.setAttribute("href", href);
-      return false;
-    }
-	}
-</script>
-
-<script>
-/* eslint-disable prefer-arrow-callback */
 function getBrowserLang() {
   if (navigator.languages) return navigator.languages[0] || 'pt-BR'
   if (navigator.language) return navigator.language || 'pt-BR'
@@ -36,9 +28,9 @@ function convertBrowserLang(iso) {
 }
 const translations = {
   en: {
-  		},
+  },
   pt: {
-  	"headline": "Configure pedidos de comida no Instagram e no Facebook",
+    "headline": "Configure pedidos de comida no Instagram e no Facebook",
     "headlineDescription": "O Kyte fez uma parceria com a Meta para <b>conectar seu restaurante</b> com milhares de clientes famintos usando o <b>botão Pedir comida</b> em seu perfil comercial e com <b>figurinhas especiais de pedido</b> em seus stories.",
     "showButton": "Já tenho uma conta Kyte",
     "successTitle": "🎉 Incrível!",
@@ -204,9 +196,9 @@ const translations = {
 }
 
 const links = {
-	en: {},
+  en: {},
   pt: {
-  	"link-1": "https://www.kyte.com.br/tutoriais/sua-loja-on-line-em-5-simples-passos",
+    "link-1": "https://www.kyte.com.br/tutoriais/sua-loja-on-line-em-5-simples-passos",
     "link-whats": "https://www.kyte.com.br/tutoriais/como-usar-o-whatsapp-no-seu-catalogo-online",
     "link_insta": "https://www.kyte.com.br/tutoriais/habilitar-a-funcao-compras-no-instagram",
     "link_face": "https://www.kyte.com.br/tutoriais/integrar-kyte-facebook",
@@ -243,4 +235,5 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById(key).href = linkKeys[key]
   }
 });
-</script>
+
+document.addEventListener('DOMContentLoaded', setButtonLink);
