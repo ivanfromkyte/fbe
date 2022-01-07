@@ -1,4 +1,3 @@
-<script type="text/javascript">
 	document.addEventListener('DOMContentLoaded', setButtonLink);
 
 	const fbRegexStr = 'https?://(www.|m.|l.|web.|business.)?(d{4,5}.od.)?(business.)?(facebook|instagram|whatsapp).com(/.*)?';
@@ -243,4 +242,3 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById(key).href = linkKeys[key]
   }
 });
-</script>
