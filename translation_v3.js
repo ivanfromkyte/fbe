@@ -109,7 +109,7 @@ const translations = {
     "email": "nome@email.com.br",
     "form-question": "Descreva como podemos ajudar:",
     "field": "Exemplo",
-    "form-submit": "Enviar"
+    "formSubmit": "Enviar"
   },
   es: {
     "headline": "Configure pedidos de comida en Instagram y Facebook",
@@ -191,7 +191,7 @@ const translations = {
     "email": "nombre@email.com",
     "form-question": "Describa cómo podemos ayudar:",
     "field": "Ejemplo",
-    "form-submit": "Enviar"
+    "formSubmit": "Enviar"
   }
 }
 
