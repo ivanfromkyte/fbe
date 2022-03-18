@@ -73,7 +73,7 @@ const translations = {
     "h2-4": "Pedidos de comida no Facebook",
     "description-intro-4": "Depois de ativar o recurso, você pode configurar o botão Pedir Comida para aparecer em seu perfil do Facebook.",
     "steps-1-4": "Acesse sua conta do Facebook pelo app ou pelo computador.",
-    "steps-2-4": "Clique em seu perfil comercial e acesse a ágina de seu restaurante.",
+    "steps-2-4": "Clique em seu perfil comercial e acesse a página de seu restaurante.",
     "steps-3-4": "O <b>botão Pedir Comida</b> é criado automaticamente durante a integração com o Kyte. Caso tenha criado um outro botão antes, ele será apagado.",
     "description-closer-4": "Agora, as pessoas poderão fazer pedidos clicando direto no botão Pedir Comida no seu perfil do Facebook.",
     "link-4": "Como configurar pedidos de comida no Facebook",
